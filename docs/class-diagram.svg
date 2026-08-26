@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+  <defs>
+    <style>
+      .title { font: 700 28px Arial, sans-serif; fill: #24352c; }
+      .head { font: 700 18px Arial, sans-serif; fill: #fff; }
+      .text { font: 14px Arial, sans-serif; fill: #222; }
+      .small { font: 12px Arial, sans-serif; fill: #555; }
+      .box { fill: #fff; stroke: #3e5b4b; stroke-width: 2; rx: 8; }
+      .bar { fill: #3e5b4b; }
+      .line { fill: none; stroke: #555; stroke-width: 2; }
+      .dash { fill: none; stroke: #555; stroke-width: 2; stroke-dasharray: 7 5; }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#555" />
+    </marker>
+    <marker id="triangle" markerWidth="13" markerHeight="13" refX="12" refY="6" orient="auto">
+      <path d="M0,0 L0,12 L12,6 z" fill="#fff" stroke="#555" />
+    </marker>
+  </defs>
+  <rect width="1200" height="900" fill="#f5f2ea" />
+  <text x="600" y="42" text-anchor="middle" class="title">Klassdiagram - Brädhörnan</text>
+
+  <g transform="translate(420 75)">
+    <rect class="box" width="360" height="190" />
+    <path class="bar" d="M8,0 H352 Q360,0 360,8 V42 H0 V8 Q0,0 8,0" />
+    <text x="180" y="27" text-anchor="middle" class="head">ClubManager</text>
+    <text x="18" y="65" class="text">- members: List&lt;Member&gt;</text>
+    <text x="18" y="87" class="text">- games: List&lt;BoardGame&gt;</text>
+    <text x="18" y="109" class="text">- events: List&lt;GameEvent&gt;</text>
+    <line x1="0" y1="120" x2="360" y2="120" stroke="#9aa99f" />
+    <text x="18" y="143" class="text">+ AddMember(), AddGame(), AddEvent()</text>
+    <text x="18" y="165" class="text">+ Search(), Sort(), Group()</text>
+  </g>
+
+  <g transform="translate(55 340)">
+    <rect class="box" width="300" height="200" />
+    <path class="bar" d="M8,0 H292 Q300,0 300,8 V42 H0 V8 Q0,0 8,0" />
+    <text x="150" y="27" text-anchor="middle" class="head">Member</text>
+    <text x="18" y="66" class="text">+ Id: Guid</text>
+    <text x="18" y="88" class="text">+ MemberNumber: int</text>
+    <text x="18" y="110" class="text">+ Name, Email: string</text>
+    <text x="18" y="132" class="text">+ IsActive: bool</text>
+    <line x1="0" y1="145" x2="300" y2="145" stroke="#9aa99f" />
+    <text x="18" y="169" class="text">+ UpdateContactDetails()</text>
+    <text x="18" y="191" class="text">+ SetActiveStatus()</text>
+  </g>
+
+  <g transform="translate(430 320)">
+    <rect class="box" width="340" height="245" />
+    <path class="bar" d="M8,0 H332 Q340,0 340,8 V42 H0 V8 Q0,0 8,0" />
+    <text x="170" y="22" text-anchor="middle" class="head">GameEvent</text>
+    <text x="170" y="37" text-anchor="middle" class="small" fill="#fff">&lt;&lt;abstract&gt;&gt;</text>
+    <text x="18" y="66" class="text">+ Title, Location: string</text>
+    <text x="18" y="88" class="text">+ StartsAt: DateTime</text>
+    <text x="18" y="110" class="text">+ Capacity, RemainingSeats: int</text>
+    <text x="18" y="132" class="text">+ Organizer: Member</text>
+    <text x="18" y="154" class="text">+ EventType: string {abstract}</text>
+    <line x1="0" y1="167" x2="340" y2="167" stroke="#9aa99f" />
+    <text x="18" y="191" class="text">+ Register(), CancelRegistration()</text>
+    <text x="18" y="213" class="text">+ AddPlannedGame()</text>
+    <text x="18" y="235" class="text">+ RemovePlannedGame()</text>
+  </g>
+
+  <g transform="translate(845 340)">
+    <rect class="box" width="300" height="210" />
+    <path class="bar" d="M8,0 H292 Q300,0 300,8 V42 H0 V8 Q0,0 8,0" />
+    <text x="150" y="27" text-anchor="middle" class="head">BoardGame</text>
+    <text x="18" y="66" class="text">+ Title: string</text>
+    <text x="18" y="88" class="text">+ Category: GameCategory</text>
+    <text x="18" y="110" class="text">+ MinPlayers, MaxPlayers: int</text>
+    <text x="18" y="132" class="text">+ Availability: GameAvailability</text>
+    <line x1="0" y1="145" x2="300" y2="145" stroke="#9aa99f" />
+    <text x="18" y="169" class="text">+ SupportsPlayerCount()</text>
+    <text x="18" y="191" class="text">+ ReserveFor(), ReleaseReservation()</text>
+  </g>
+
+  <g transform="translate(70 680)">
+    <rect class="box" width="260" height="115" />
+    <path class="bar" d="M8,0 H252 Q260,0 260,8 V42 H0 V8 Q0,0 8,0" />
+    <text x="130" y="27" text-anchor="middle" class="head">Registration</text>
+    <text x="18" y="68" class="text">+ Member: Member</text>
+    <text x="18" y="92" class="text">+ RegisteredAt: DateTime</text>
+  </g>
+
+  <g transform="translate(400 705)">
+    <rect class="box" width="220" height="72" />
+    <rect class="bar" width="220" height="42" rx="8" />
+    <text x="110" y="27" text-anchor="middle" class="head">OpenGameNight</text>
+    <text x="110" y="62" text-anchor="middle" class="small">Öppen spelkväll</text>
+  </g>
+  <g transform="translate(650 705)">
+    <rect class="box" width="220" height="72" />
+    <rect class="bar" width="220" height="42" rx="8" />
+    <text x="110" y="27" text-anchor="middle" class="head">ThemeNight</text>
+    <text x="110" y="62" text-anchor="middle" class="small">+ Theme: string</text>
+  </g>
+  <g transform="translate(900 705)">
+    <rect class="box" width="220" height="72" />
+    <rect class="bar" width="220" height="42" rx="8" />
+    <text x="110" y="27" text-anchor="middle" class="head">Tournament</text>
+    <text x="110" y="62" text-anchor="middle" class="small">+ TournamentGame: string</text>
+  </g>
+
+  <path class="line" d="M500 265 V292 H205 V340" marker-end="url(#arrow)" />
+  <path class="line" d="M600 265 V320" marker-end="url(#arrow)" />
+  <path class="line" d="M700 265 V292 H995 V340" marker-end="url(#arrow)" />
+  <text x="216" y="312" class="small">0..*</text><text x="980" y="312" class="small">0..*</text>
+  <path class="line" d="M430 440 H355" marker-end="url(#arrow)" />
+  <text x="365" y="430" class="small">organizer 1</text>
+  <path class="line" d="M500 565 V625 H200 V680" marker-end="url(#arrow)" />
+  <text x="212" y="655" class="small">0..*</text>
+  <path class="line" d="M770 455 H845" marker-end="url(#arrow)" />
+  <text x="778" y="445" class="small">planned 0..*</text>
+  <path class="dash" d="M510 705 V625 H570 V565" marker-end="url(#triangle)" />
+  <path class="dash" d="M760 705 V625 H600 V565" marker-end="url(#triangle)" />
+  <path class="dash" d="M1010 705 V625 H630 V565" marker-end="url(#triangle)" />
+  <text x="600" y="855" text-anchor="middle" class="small">Aggregationer, relationer och arv i domänmodellen</text>
+</svg>

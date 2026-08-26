@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820">
+  <defs>
+    <style>
+      .title { font: 700 28px Arial, sans-serif; fill: #24352c; }
+      .head { font: 700 17px Arial, sans-serif; fill: #fff; }
+      .text { font: 14px Arial, sans-serif; fill: #222; }
+      .small { font: 13px Arial, sans-serif; fill: #555; }
+      .life { stroke: #777; stroke-width: 2; stroke-dasharray: 7 6; }
+      .msg { stroke: #3e5b4b; stroke-width: 2; marker-end: url(#arrow); }
+      .return { stroke: #8a6225; stroke-width: 2; stroke-dasharray: 7 5; marker-end: url(#arrow2); }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#3e5b4b" /></marker>
+    <marker id="arrow2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#8a6225" /></marker>
+  </defs>
+  <rect width="1200" height="820" fill="#f5f2ea" />
+  <text x="600" y="42" text-anchor="middle" class="title">Sekvensdiagram - anmäla medlem</text>
+
+  <g><rect x="75" y="75" width="200" height="54" rx="8" fill="#3e5b4b" /><text x="175" y="108" text-anchor="middle" class="head">Användare</text></g>
+  <g><rect x="365" y="75" width="200" height="54" rx="8" fill="#3e5b4b" /><text x="465" y="108" text-anchor="middle" class="head">MainWindow</text></g>
+  <g><rect x="655" y="75" width="200" height="54" rx="8" fill="#3e5b4b" /><text x="755" y="108" text-anchor="middle" class="head">GameEvent</text></g>
+  <g><rect x="945" y="75" width="200" height="54" rx="8" fill="#3e5b4b" /><text x="1045" y="108" text-anchor="middle" class="head">Registration</text></g>
+
+  <line x1="175" y1="129" x2="175" y2="765" class="life" />
+  <line x1="465" y1="129" x2="465" y2="765" class="life" />
+  <line x1="755" y1="129" x2="755" y2="765" class="life" />
+  <line x1="1045" y1="129" x2="1045" y2="765" class="life" />
+
+  <line x1="175" y1="180" x2="465" y2="180" class="msg" /><text x="320" y="169" text-anchor="middle" class="text">Väljer träff och medlem</text>
+  <line x1="175" y1="225" x2="465" y2="225" class="msg" /><text x="320" y="214" text-anchor="middle" class="text">Klickar på Anmäl</text>
+  <line x1="465" y1="275" x2="755" y2="275" class="msg" /><text x="610" y="264" text-anchor="middle" class="text">Register(member)</text>
+
+  <rect x="330" y="315" width="770" height="365" fill="#fff" stroke="#8a6225" stroke-width="2" rx="6" />
+  <rect x="330" y="315" width="180" height="30" fill="#d8a85c" /><text x="342" y="336" class="text">alt - verksamhetsregler</text>
+  <text x="350" y="380" class="text">[medlemmen är redan anmäld]</text>
+  <line x1="755" y1="410" x2="465" y2="410" class="return" /><text x="610" y="399" text-anchor="middle" class="small">InvalidOperationException</text>
+  <line x1="465" y1="447" x2="175" y2="447" class="return" /><text x="320" y="436" text-anchor="middle" class="small">Visar tydligt felmeddelande</text>
+
+  <line x1="330" y1="468" x2="1100" y2="468" stroke="#aaa" />
+  <text x="350" y="500" class="text">[träffen är fullbokad]</text>
+  <line x1="755" y1="530" x2="465" y2="530" class="return" /><text x="610" y="519" text-anchor="middle" class="small">InvalidOperationException</text>
+
+  <line x1="330" y1="552" x2="1100" y2="552" stroke="#aaa" />
+  <text x="350" y="584" class="text">[anmälan är giltig]</text>
+  <line x1="755" y1="615" x2="1045" y2="615" class="msg" /><text x="900" y="604" text-anchor="middle" class="small">new Registration(member)</text>
+  <line x1="755" y1="650" x2="465" y2="650" class="return" /><text x="610" y="639" text-anchor="middle" class="small">Anmälan klar</text>
+
+  <line x1="465" y1="725" x2="175" y2="725" class="return" /><text x="320" y="714" text-anchor="middle" class="text">Uppdaterad deltagarlista</text>
+  <text x="600" y="795" text-anchor="middle" class="small">UC2 - koppla en aktiv medlem till en kommande spelträff</text>
+</svg>
