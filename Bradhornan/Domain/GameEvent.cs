@@ -1,8 +1,10 @@
 namespace Bradhornan.Domain;
 
+
 public abstract class GameEvent
 {
     private readonly List<Registration> _registrations = new();
+
     private readonly List<BoardGame> _plannedGames = new();
 
     public Guid Id { get; } = Guid.NewGuid();
@@ -12,6 +14,7 @@ public abstract class GameEvent
     public int Capacity { get; private set; }
     public Member Organizer { get; private set; } = null!;
     public abstract string EventType { get; }
+
 
     public IReadOnlyList<Registration> Registrations => _registrations.AsReadOnly();
     public IReadOnlyList<BoardGame> PlannedGames => _plannedGames.AsReadOnly();

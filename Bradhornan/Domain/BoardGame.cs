@@ -1,15 +1,22 @@
 namespace Bradhornan.Domain;
 
+
 public class BoardGame
 {
     public Guid Id { get; } = Guid.NewGuid();
+
     public string Title { get; private set; } = string.Empty;
+
     public GameCategory Category { get; private set; }
     public int MinPlayers { get; private set; }
+
     public int MaxPlayers { get; private set; }
+
     public int PlayTimeMinutes { get; private set; }
+
     public DifficultyLevel Difficulty { get; private set; }
     public string Description { get; private set; } = string.Empty;
+
     public GameAvailability Availability { get; private set; } = GameAvailability.Available;
     public Guid? ReservedForEventId { get; private set; }
 
@@ -44,6 +51,7 @@ public class BoardGame
 
         if (playTimeMinutes <= 0)
             throw new ArgumentException("Speltiden måste vara större än noll.");
+
 
         Title = title.Trim();
         Category = category;
@@ -84,9 +92,11 @@ public class BoardGame
     }
 
     public void MarkAvailable()
+    
     {
         Availability = GameAvailability.Available;
         ReservedForEventId = null;
+
     }
 
     public override string ToString() => $"{Title} ({Category})";

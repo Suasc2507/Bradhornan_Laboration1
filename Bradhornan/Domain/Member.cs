@@ -1,5 +1,6 @@
 namespace Bradhornan.Domain;
 
+
 public class Member
 {
     public Guid Id { get; } = Guid.NewGuid();
@@ -37,4 +38,5 @@ public class Member
     public void SetActiveStatus(bool isActive) => IsActive = isActive;
 
     public override string ToString() => $"{MemberNumber} - {Name}";
+
 }

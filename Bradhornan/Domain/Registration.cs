@@ -10,4 +10,5 @@ public class Registration
         Member = member ?? throw new ArgumentNullException(nameof(member));
         RegisteredAt = DateTime.Now;
     }
+
 }

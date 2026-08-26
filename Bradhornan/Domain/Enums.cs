@@ -1,5 +1,6 @@
 namespace Bradhornan.Domain;
 
+
 public enum GameCategory
 {
     Strategy,
@@ -9,12 +10,14 @@ public enum GameCategory
     Card
 }
 
+
 public enum DifficultyLevel
 {
     Beginner,
     Intermediate,
     Advanced
 }
+
 
 public enum GameAvailability
 {
